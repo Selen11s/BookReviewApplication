@@ -1,0 +1,17 @@
+<h1>Upravenie Recenzie</h1>
+
+<%= simple_form_for([@book, @review]) do |f| %>
+<div id="rating-form">
+  <label>Hodnotenie</label>
+</div>
+  <%= f.input :comment, label: "Recenzia" %>
+  <%= f.button :submit, label: "Upraviť" %>
+<% end %>
+
+
+<script>
+  $('#rating-form').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
+</script>
